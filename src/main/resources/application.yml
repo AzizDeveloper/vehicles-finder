@@ -1,1 +1,21 @@
-spring.application.name=vehicles-finder
+spring:
+  application:
+    name: vehicles-finder
+  datasource:
+    url: jdbc:postgresql://localhost:5434/vehicles_finder_db
+    username: user_db
+    password: pass_db
+    driver-class-name: org.postgresql.Driver
+  sql:
+    init:
+      mode: always
+      platform: postgresql
+  jpa:
+    hibernate:
+      ddl-auto: none
+    database: postgresql
+    database-platform: org.hibernate.dialect.PostgreSQLDialect
+  liquibase:
+    enabled: true
+server:
+  port: 8040
