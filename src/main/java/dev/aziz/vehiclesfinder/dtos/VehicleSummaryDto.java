@@ -16,7 +16,7 @@ public class VehicleSummaryDto {
     private Long id;
     private String brand;
     private String model;
-    private Integer production_year;
+    private Integer productionYear;
     private BigDecimal price;
 
 }

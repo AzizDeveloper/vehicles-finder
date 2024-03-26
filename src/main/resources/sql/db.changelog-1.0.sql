@@ -16,21 +16,14 @@ CREATE TABLE vehicle (
 
 --changeset aziz:2
 CREATE TABLE picture (
-    id BIGSERIAL PRIMARY KEY,
-    url TEXT NOT NULL
+    id BIGINT PRIMARY KEY,
+    url VARCHAR(255) NOT NULL,
+    vehicle_id BIGINT,
+    FOREIGN KEY (vehicle_id) REFERENCES vehicle(id)
 );
 --rollback drop table picture;
 
 --changeset aziz:3
-CREATE TABLE IF NOT EXISTS vehicle_pictures (
-    vehicle_id BIGINT NOT NULL,
-    picture_id BIGINT NOT NULL,
-    FOREIGN KEY (vehicle_id) REFERENCES vehicle(id),
-    FOREIGN KEY (picture_id) REFERENCES picture(id)
-)
---rollback drop table vehicle_pictures;
-
---changeset aziz:4
 CREATE TABLE IF NOT EXISTS app_user (
     id BIGSERIAL PRIMARY KEY,
     first_name VARCHAR(255) NOT NULL,

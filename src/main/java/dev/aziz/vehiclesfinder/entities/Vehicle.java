@@ -42,8 +42,8 @@ public class Vehicle {
     @NotEmpty(message = "Model should not be empty")
     private String model;
 
-    @NotNull(message = "Produced year should not be empty")
-    private Integer production_year;
+    @NotNull(message = "Production year should not be empty")
+    private Integer productionYear;
 
     @NotNull(message = "Kilometres should not be empty")
     private Double kilometres;
